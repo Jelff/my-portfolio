@@ -1,0 +1,42 @@
+name: CI/CD for Portfolio
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checar o código do repositório
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Configurar o Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # Instalar dependências
+      - name: Install dependencies
+        run: npm install
+
+      # Linting (verificar qualidade do código)
+      - name: Run Linter
+        run: npm run lint
+
+      # Rodar testes
+      - name: Run Tests
+        run: npm run test -- --watch=false --browsers=ChromeHeadless
+
+      # Build da aplicação
+      - name: Build Angular App
+        run: npm run build -- --configuration production
+
+

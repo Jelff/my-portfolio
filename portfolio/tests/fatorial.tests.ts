@@ -1,7 +1,12 @@
 import { fatorial } from '../src/fatorial';
 
 describe('Fatorial Function', () => {
+
   test('Fatorial de 0 deve ser 1', () => {
+
+
+    test('Fatorial de 0 deve ser 1', () => {
+
     expect(fatorial(0)).toBe(1);
   });
 
@@ -19,6 +24,12 @@ describe('Fatorial Function', () => {
 
   test('Fatorial de um número negativo deve lançar erro', () => {
     expect(() => fatorial(-1)).toThrow('Número deve ser não-negativo');
+  });
+
+
+  //Cenário: Valores grandes
+  test('Fatorial de 20 deve ser 2432902008176640000', () => {
+    expect(fatorial(20)).toBe(2432902008176640000);
   });
 
   test('Fatorial com entrada inválida deve lançar erro (undefined)', () => {

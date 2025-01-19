@@ -1,4 +1,4 @@
-const arrayNumeros = [3, 5, 7, 3, 8, 9, 1];
+export const arrayNumeros = [3, 5, 7, 3, 8, 9, 1];
 
 export function quadradosFor(array: number[]): number[] {
     const resultado: number[] = [];
@@ -7,7 +7,3 @@ export function quadradosFor(array: number[]): number[] {
     }
     return resultado;
 }
-
-//resultados 
-const quadrados = quadradosFor(arrayNumeros);
-console.log("Quadrados (usando for):", quadrados);

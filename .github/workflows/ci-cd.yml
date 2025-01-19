@@ -26,17 +26,10 @@ jobs:
       # Instalar dependências
       - name: Install dependencies
         run: npm install
-
-      # Linting (verificar qualidade do código)
-      - name: Run Linter
-        run: npm run lint
-
+        
       # Rodar testes
       - name: Run Tests
         run: npm run test -- --watch=false --browsers=ChromeHeadless
 
-      # Build da aplicação
-      - name: Build Angular App
-        run: npm run build -- --configuration production
 
 

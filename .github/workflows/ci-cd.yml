@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: npm install
         
-      # Rodar testes
+      # Rodar testes bons de verdade
       - name: Run Tests
         run: npm run test -- --watch=false --browsers=ChromeHeadless
 
